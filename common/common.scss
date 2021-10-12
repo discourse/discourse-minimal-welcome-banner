@@ -1,0 +1,51 @@
+$banner_background_image: false !default; // only set as false if not already set
+$banner_background_color: var(--header_background) !default;
+
+.minimal-welcome-banner {
+  @if $banner_background_color {
+    background-color: $banner_background_color;
+  }
+
+  .wrap {
+    @if $banner_background_image {
+      background-image: url(#{$banner_background_image});
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center bottom;
+      @media screen and (max-width: 650px) {
+        background-image: none;
+      }
+    }
+    color: $banner_text_color;
+    padding-top: 3em;
+    padding-bottom: 6em;
+    @media screen and (max-width: 650px) {
+      padding-bottom: 3em;
+    }
+  }
+
+  h1 {
+    font-size: 3em; // scales beyond the Discourse font-size variables
+    max-width: 600px; // creates some space on the right for background images
+    line-height: 1.2;
+    @media screen and (max-width: 767px) {
+      font-size: var(--font-up-5);
+    }
+  }
+
+  h2 {
+    font-weight: normal;
+    font-size: var(--font-up-2);
+    margin-top: 1em;
+    @media screen and (max-width: 767px) {
+      font-size: var(--font-up-1);
+    }
+  }
+}
+
+html:not(.anon) {
+  // for banner_only_show_anon setting
+  .anon-only {
+    display: none;
+  }
+}

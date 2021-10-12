@@ -1,0 +1,19 @@
+banner_headline:
+  default: ""
+
+banner_subhead:
+  default: ""
+
+banner_text_color:
+  default: "var(--header_primary)"
+
+banner_background_color:
+  default: "var(--header_background)"
+
+banner_background_image:
+  type: upload
+  default: ""
+
+banner_only_show_anon:
+  default: false
+  description: "When enabled, the banner will only appear to logged-out users"

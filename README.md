@@ -1,0 +1,1 @@
+# discourse-minimal-welcome-banner
