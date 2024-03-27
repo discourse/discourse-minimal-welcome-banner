@@ -1,8 +1,7 @@
 import Component from "@ember/component";
-import discourseComputed from "discourse-common/utils/decorators";
-import { getOwner } from "discourse-common/lib/get-owner";
-import { inject as service } from "@ember/service";
+import { service } from "@ember/service";
 import { defaultHomepage } from "discourse/lib/utilities";
+import discourseComputed from "discourse-common/utils/decorators";
 
 export default Component.extend({
   tagName: "",
@@ -15,7 +14,7 @@ export default Component.extend({
   actions: {},
 
   @discourseComputed("router.currentRouteName", "router.currentURL")
-  shouldDisplay(currentRouteName, currentURL) {
-    return currentRouteName == `discovery.${defaultHomepage()}`;
+  shouldDisplay(currentRouteName) {
+    return currentRouteName === `discovery.${defaultHomepage()}`;
   },
 });
