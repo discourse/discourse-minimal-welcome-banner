@@ -1,15 +1,15 @@
-
- 
-    {{#if shouldDisplay}} 
-      {{#if (theme-setting 'banner_headline')}}
-        <div class="minimal-welcome-banner {{if (theme-setting 'banner_only_show_anon') 'anon-only'}}">
-          <div class="wrap">
-            <h1>{{theme-setting 'banner_headline'}}</h1>
-            {{#if (theme-setting 'banner_subhead')}}
-              <h2>{{theme-setting 'banner_subhead'}}</h2>
-            {{/if}}
-          </div>
-        </div>
-      {{/if}}
-    {{/if}}
-
+{{#if shouldDisplay}}
+  {{#if (theme-setting "banner_headline")}}
+    <div
+      class="minimal-welcome-banner
+        {{if (theme-setting 'banner_only_show_anon') 'anon-only'}}"
+    >
+      <div class="wrap">
+        <h1>{{theme-setting "banner_headline"}}</h1>
+        {{#if (theme-setting "banner_subhead")}}
+          <h2>{{theme-setting "banner_subhead"}}</h2>
+        {{/if}}
+      </div>
+    </div>
+  {{/if}}
+{{/if}}
