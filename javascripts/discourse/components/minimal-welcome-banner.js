@@ -1,8 +1,8 @@
 import Component from "@ember/component";
 import { service } from "@ember/service";
 import { tagName } from "@ember-decorators/component";
+import discourseComputed from "discourse/lib/decorators";
 import { defaultHomepage } from "discourse/lib/utilities";
-import discourseComputed from "discourse-common/utils/decorators";
 
 @tagName("")
 export default class MinimalWelcomeBanner extends Component {
