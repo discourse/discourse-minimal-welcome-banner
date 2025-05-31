@@ -12,4 +12,22 @@ export default class MinimalWelcomeBanner extends Component {
   shouldDisplay(currentRouteName) {
     return currentRouteName === `discovery.${defaultHomepage()}`;
   }
+
+  <template>
+    {{#if this.shouldDisplay}}
+      {{#if settings.banner_headline}}
+        <div
+          class="minimal-welcome-banner
+            {{if settings.banner_only_show_anon 'anon-only'}}"
+        >
+          <div class="wrap">
+            <h1>{{settings.banner_headline}}</h1>
+            {{#if settings.banner_subhead}}
+              <h2>{{settings.banner_subhead}}</h2>
+            {{/if}}
+          </div>
+        </div>
+      {{/if}}
+    {{/if}}
+  </template>
 }
