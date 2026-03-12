@@ -1,16 +1,17 @@
+/* eslint-disable ember/no-classic-components */
 import Component from "@ember/component";
+import { computed } from "@ember/object";
 import { service } from "@ember/service";
 import { tagName } from "@ember-decorators/component";
-import discourseComputed from "discourse/lib/decorators";
 import { defaultHomepage } from "discourse/lib/utilities";
 
 @tagName("")
 export default class MinimalWelcomeBanner extends Component {
   @service router;
 
-  @discourseComputed("router.currentRouteName", "router.currentURL")
-  shouldDisplay(currentRouteName) {
-    return currentRouteName === `discovery.${defaultHomepage()}`;
+  @computed("router.currentRouteName", "router.currentURL")
+  get shouldDisplay() {
+    return this.router?.currentRouteName === `discovery.${defaultHomepage()}`;
   }
 
   <template>
